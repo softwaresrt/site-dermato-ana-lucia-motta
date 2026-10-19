@@ -30,19 +30,27 @@
     <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3M4 4l2 2m12 12 2 2M20 4l-2 2M6 18l-2 2"/></symbol>
   </svg>
 
-  <div class="loader" id="loader" aria-hidden="true"><div class="loader-orb"></div><span>ANA LÚCIA MOTTA</span><small>DERMATOLOGIA</small></div>
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-content">
+      <div class="loader-monogram">a<span>·</span>m</div>
+      <span class="loader-name">ANA LÚCIA MOTTA</span>
+      <small class="loader-sub">DERMATOLOGIA</small>
+      <div class="loader-line"><div class="loader-line-inner"></div></div>
+    </div>
+  </div>
   <div class="scroll-progress" id="scroll-progress"></div>
 
   <header class="site-header" id="header">
     <a class="brand" href="#inicio" aria-label="Dra. Ana Lúcia Motta, início"><span class="brand-mark">a<span>·</span>m</span><span class="brand-name">Ana Lúcia Motta<small>DERMATOLOGIA</small></span></a>
-    <nav class="header-nav" aria-label="Navegação principal"><a href="#filosofia">Filosofia</a><a href="#tratamentos">Tratamentos</a><a href="#sobre">A doutora</a><a href="#experiencia">Experiência</a></nav>
+    <nav class="header-nav" aria-label="Navegação principal"><a href="#filosofia">Filosofia</a><a href="#tratamentos">Tratamentos</a><a href="#sobre">A doutora</a><a href="#contato">Contato</a></nav>
     <a class="header-cta" data-wa="Olá! Gostaria de agendar uma avaliação dermatológica." href="https://wa.me/552196657080" target="_blank" rel="noopener">Agendar avaliação <svg><use href="#i-diag"/></svg></a>
     <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
   </header>
-  <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile"><a href="#filosofia">Filosofia</a><a href="#tratamentos">Tratamentos</a><a href="#sobre">A doutora</a><a href="#experiencia">Experiência</a><a href="#contato">Agendar avaliação ↗</a></nav>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile"><a href="#filosofia">Filosofia</a><a href="#tratamentos">Tratamentos</a><a href="#sobre">A doutora</a><a href="#contato">Agendar avaliação ↗</a></nav>
 
   <main>
     <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <canvas id="hero-bg-canvas" class="hero-bg-canvas" aria-hidden="true"></canvas>
       <div class="hero-grain"></div>
       <div class="hero-copy">
         <div class="eyebrow hero-eyebrow"><span class="eyebrow-line"></span> DERMATOLOGIA CLÍNICA & ESTÉTICA <span class="eyebrow-dot"></span> RIO DE JANEIRO</div>
@@ -52,7 +60,7 @@
         <div class="hero-bottom"><div class="hero-line"></div><span>CONHECER É O PRIMEIRO PASSO PARA CUIDAR.</span></div>
       </div>
       <div class="hero-media" id="hero-media">
-        <div class="hero-photo"><img id="hero-photo-img" src="assets/ana-retrato.webp" alt="Retrato profissional da Dra. Ana Lúcia Motta" fetchpriority="high" /></div><canvas id="hero-particles" class="hero-particles" aria-hidden="true"></canvas><button class="particle-toggle" id="particle-toggle" type="button" aria-pressed="false">✳ <span>EXPLORAR EM PARTÍCULAS</span></button>
+        <div class="hero-photo"><img id="hero-photo-img" src="assets/ana-retrato.webp" alt="Retrato profissional da Dra. Ana Lúcia Motta" fetchpriority="high" /></div>
         <div class="hero-arc arc-one"></div><div class="hero-arc arc-two"></div>
         <div class="orbit-note"><span class="orbit-spark">✳</span><span>CIÊNCIA<br/><i>&</i> SENSIBILIDADE</span></div>
         <div class="hero-image-caption"><span>DRª ANA LÚCIA MOTTA</span><span>UFRJ / SBD</span></div>
@@ -62,51 +70,147 @@
     </section>
 
     <section class="intro section-space" id="filosofia">
-      <div class="intro-kicker reveal"><span class="section-index">01 / NOSSO OLHAR</span><span class="asterisk">✳</span></div>
+      <div class="intro-kicker reveal"><span class="section-index">NOSSO OLHAR</span><span class="asterisk">✳</span></div>
       <div class="intro-main reveal"><span class="intro-quote">“</span><h2>O cuidado começa<br/>quando a gente <em>olha</em><br/>além da pele.</h2></div>
       <div class="intro-footer reveal"><p>Mais do que protocolos, pessoas. Uma abordagem que considera sua história, suas particularidades e o que realmente faz sentido para você.</p><div class="intro-signature">Ciência. Naturalidade. Acolhimento. <span>✺</span></div></div>
     </section>
 
-    <section class="care-map section-space" id="mapa" aria-labelledby="map-title">
-      <div class="section-top reveal"><span class="section-index light">02 / CONHEÇA SUA PELE</span><span class="section-top-note light">UM JEITO DIFERENTE DE EXPLORAR O CUIDADO</span></div>
-      <div class="map-heading reveal"><h2 id="map-title">Cada detalhe<br/>tem sua <em>história.</em></h2><p>Explore o mapa facial. Selecione uma região para descobrir quais temas podem ser conversados durante uma avaliação.</p></div>
-      <div class="map-grid">
-        <div class="map-viewport reveal" id="map-viewport"><canvas id="face-canvas" role="img" aria-label="Representação tridimensional artística de um rosto com regiões interativas" ></canvas><div class="face-halo"></div><div class="face-map-label">MAPA FACIAL <span>INTERATIVO</span></div><span class="face-decor face-decor-top">FISIOLOGIA DA PELE  /  ESTUDO VISUAL</span><span class="face-decor face-decor-bottom">ARRASTE PARA GIRAR O ROSTO <span>⟷</span></span><div id="face-hotspots" class="face-hotspots"></div><div id="face-fallback" class="face-fallback" aria-hidden="true"><div class="fallback-head"></div></div></div>
-        <div class="map-content reveal"><div class="map-aside-heading"><span>ESCOLHA UMA REGIÃO</span><span>↗</span></div><div class="area-options" id="area-options"></div><div class="map-info" id="map-info" aria-live="polite"><span class="map-info-count">01 — AVALIAÇÃO INDIVIDUAL</span><h3>O que sua pele<br/><em>precisa hoje?</em></h3><p>Clique em uma região para conhecer assuntos que podem fazer parte da consulta dermatológica.</p><a class="map-info-link" href="#contato">Começar pelo cuidado <svg><use href="#i-arrow"/></svg></a></div><p class="disclaimer">Representação artística e educativa. Não substitui exame físico, diagnóstico ou orientação médica.</p></div>
-      </div>
-    </section>
-
     <section class="treatments section-space" id="tratamentos">
-      <div class="section-top reveal"><span class="section-index">03 / O QUE CUIDAMOS</span><span class="section-top-note">ATENÇÃO A CADA NECESSIDADE</span></div>
-      <div class="treatment-intro reveal"><div><h2>Cuidar é <em>entender.</em></h2><p>Da prevenção aos cuidados estéticos, o ponto de partida é sempre uma avaliação personalizada.</p></div><div class="treatment-count"><span class="number-sans">04</span><span>FRENTES DE<br/>CUIDADO</span></div></div>
+      <div class="section-top reveal"><span class="section-index">O QUE CUIDAMOS</span><span class="section-top-note">ATENÇÃO A CADA NECESSIDADE</span></div>
+      <div class="treatment-intro reveal"><div><h2>Cuidar é <em>entender.</em></h2><p>Da prevenção aos cuidados estéticos, o ponto de partida é sempre uma avaliação personalizada.</p></div><div class="treatment-count"><span>FRENTES DE<br/>CUIDADO</span></div></div>
       <div class="filter-row" role="group" aria-label="Filtrar áreas de cuidado"><button class="filter active" data-filter="todos" type="button">Todos os cuidados</button><button class="filter" data-filter="clinica" type="button">Dermatologia clínica</button><button class="filter" data-filter="estetica" type="button">Estética facial</button><button class="filter" data-filter="prevencao" type="button">Prevenção</button></div>
       <div class="treatment-list" id="treatment-list">
-        <button class="treatment-item reveal" data-category="clinica" data-treatment="pele" type="button"><span class="treatment-num">01</span><span class="treatment-name">Saúde da pele <small>Diagnóstico e acompanhamento</small></span><span class="treatment-tag">CLÍNICA</span><span class="treatment-arrow"><svg><use href="#i-diag"/></svg></span></button>
-        <button class="treatment-item reveal" data-category="estetica" data-treatment="facial" type="button"><span class="treatment-num">02</span><span class="treatment-name">Dermatologia estética <small>Naturalidade com indicação médica</small></span><span class="treatment-tag">FACIAL</span><span class="treatment-arrow"><svg><use href="#i-diag"/></svg></span></button>
-        <button class="treatment-item reveal" data-category="prevencao clinica" data-treatment="prevencao" type="button"><span class="treatment-num">03</span><span class="treatment-name">Prevenção & sinais <small>Olhar atento, cuidado contínuo</small></span><span class="treatment-tag">PREVENÇÃO</span><span class="treatment-arrow"><svg><use href="#i-diag"/></svg></span></button>
-        <button class="treatment-item reveal" data-category="clinica estetica" data-treatment="rotina" type="button"><span class="treatment-num">04</span><span class="treatment-name">Rotina e longevidade <small>Uma pele bem cuidada em cada fase</small></span><span class="treatment-tag">CUIDADO</span><span class="treatment-arrow"><svg><use href="#i-diag"/></svg></span></button>
+        <button class="treatment-item reveal" data-category="clinica" data-treatment="pele" type="button"><span class="treatment-name">Saúde da pele <small>Diagnóstico e acompanhamento</small></span><span class="treatment-tag">CLÍNICA</span><span class="treatment-arrow"><svg><use href="#i-diag"/></svg></span></button>
+        <button class="treatment-item reveal" data-category="estetica" data-treatment="facial" type="button"><span class="treatment-name">Dermatologia estética <small>Naturalidade com indicação médica</small></span><span class="treatment-tag">FACIAL</span><span class="treatment-arrow"><svg><use href="#i-diag"/></svg></span></button>
+        <button class="treatment-item reveal" data-category="prevencao clinica" data-treatment="prevencao" type="button"><span class="treatment-name">Prevenção & sinais <small>Olhar atento, cuidado contínuo</small></span><span class="treatment-tag">PREVENÇÃO</span><span class="treatment-arrow"><svg><use href="#i-diag"/></svg></span></button>
+        <button class="treatment-item reveal" data-category="clinica estetica" data-treatment="rotina" type="button"><span class="treatment-name">Rotina e longevidade <small>Uma pele bem cuidada em cada fase</small></span><span class="treatment-tag">CUIDADO</span><span class="treatment-arrow"><svg><use href="#i-diag"/></svg></span></button>
       </div>
       <div class="treatment-footnote">* A definição de tratamentos, procedimentos e frequência é feita exclusivamente em avaliação médica.</div>
     </section>
 
     <section class="statement" aria-label="Nossa visão"><div class="statement-text" aria-hidden="true"><span>BELEZA COM</span><em>identidade.</em><span>CIÊNCIA COM</span><em>sensibilidade.</em></div><div class="statement-center"><span>✳</span> O EXTRAORDINÁRIO ESTÁ EM SER VOCÊ.</div></section>
 
-    <section class="about section-space" id="sobre"><div class="about-image reveal"><img src="assets/ana-consultorio.webp" loading="lazy" alt="Dra. Ana Lúcia Motta em seu consultório, sentada à mesa" /><span class="about-image-tag">PROXIMIDADE QUE TRANSFORMA O CUIDADO</span></div><div class="about-copy reveal"><span class="section-index">04 / QUEM CUIDA DE VOCÊ</span><h2>Muito prazer,<br/>sou <em>Ana Lúcia.</em></h2><p class="about-lead">Acredito em uma dermatologia que une conhecimento técnico e um olhar verdadeiramente individual.</p><p>Dermatologista formada pela Universidade Federal do Rio de Janeiro (UFRJ), com especialização reconhecida pela Sociedade Brasileira de Dermatologia (SBD). Minha atuação contempla dermatologia clínica, cosmética, tratamentos faciais e detecção precoce do câncer de pele.</p><div class="credentials"><div><span>FORMAÇÃO</span><strong>Universidade Federal<br/>do Rio de Janeiro</strong></div><div><span>ESPECIALIDADE</span><strong>Dermatologia<br/>Sociedade Brasileira de Dermatologia</strong></div><div><span>REGISTROS INFORMADOS</span><strong>CRM-RJ 5291852-0<br/>RQE 28041</strong></div></div><a class="text-link dark" href="https://www.instagram.com/draanaluciamotta/" target="_blank" rel="noopener">Acompanhe meu dia a dia <svg><use href="#i-diag"/></svg></a></div></section>
+    <section class="about section-space" id="sobre"><div class="about-image reveal"><img src="assets/ana-consultorio.webp" loading="lazy" alt="Dra. Ana Lúcia Motta em seu consultório, sentada à mesa" /><span class="about-image-tag">PROXIMIDADE QUE TRANSFORMA O CUIDADO</span></div><div class="about-copy reveal"><span class="section-index">QUEM CUIDA DE VOCÊ</span><h2>Muito prazer,<br/>sou <em>Ana Lúcia.</em></h2><p class="about-lead">Acredito em uma dermatologia que une conhecimento técnico e um olhar verdadeiramente individual.</p><p>Dermatologista formada pela Universidade Federal do Rio de Janeiro (UFRJ), com especialização reconhecida pela Sociedade Brasileira de Dermatologia (SBD). Minha atuação contempla dermatologia clínica, cosmética, tratamentos faciais e detecção precoce do câncer de pele.</p><div class="credentials"><div><span>FORMAÇÃO</span><strong>Universidade Federal<br/>do Rio de Janeiro</strong></div><div><span>ESPECIALIDADE</span><strong>Dermatologia<br/>Sociedade Brasileira de Dermatologia</strong></div><div><span>REGISTROS INFORMADOS</span><strong>CRM-RJ 5291852-0<br/>RQE 28041</strong></div></div><a class="text-link dark" href="https://www.instagram.com/draanaluciamotta/" target="_blank" rel="noopener">Acompanhe meu dia a dia <svg><use href="#i-diag"/></svg></a></div></section>
 
-    <section class="journey section-space" id="experiencia"><div class="section-top reveal"><span class="section-index">05 / SUA EXPERIÊNCIA</span><span class="section-top-note">DO PRIMEIRO CONTATO AO ACOMPANHAMENTO</span></div><div class="journey-title reveal"><h2>Seu cuidado, <em>sem pressa.</em></h2><p>Cada encontro tem seu momento. Conheça a jornada que orienta uma experiência dermatológica individualizada.</p></div><div class="journey-stage" id="journey-stage"><div class="journey-stage-visual"><div class="journey-room"><div class="room-ceiling"></div><div class="room-back"><div class="room-arch"></div><div class="room-orb"></div></div><div class="room-floor"></div><div class="room-line line-l"></div><div class="room-line line-r"></div></div><div class="journey-stage-caption"><span>UMA JORNADA DE CUIDADO</span><span id="journey-counter">01 / 04</span></div><div class="journey-copy" id="journey-copy"><span class="journey-number">01</span><h3>Primeiro,<br/><em>escutamos.</em></h3><p>Entender suas expectativas e sua história é parte essencial da consulta.</p></div><div class="journey-mini-nav" id="journey-mini-nav"><button class="active" aria-label="Etapa 1" data-journey="0"></button><button aria-label="Etapa 2" data-journey="1"></button><button aria-label="Etapa 3" data-journey="2"></button><button aria-label="Etapa 4" data-journey="3"></button></div></div><div class="journey-step-markers" aria-hidden="true"><div class="journey-marker" data-step="0"></div><div class="journey-marker" data-step="1"></div><div class="journey-marker" data-step="2"></div><div class="journey-marker" data-step="3"></div></div></div><p class="journey-note">Visualização conceitual da jornada de atendimento, não uma reprodução física do consultório.</p></section>
+    <section class="compare section-space" id="resultados">
+      <div class="compare-copy reveal">
+        <span class="section-index">CLAREZA & RESPONSABILIDADE</span>
+        <h2>Resultados começam<br/>com <em>expectativas reais.</em></h2>
+        <p>Em dermatologia, cada pele responde de uma maneira. Conteúdos de antes e depois só devem ser apresentados com autorização, identificação adequada e contexto clínico.</p>
+        <a href="#contato" class="text-link dark">Converse sobre suas expectativas <svg><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="compare-widget reveal">
+        <div class="compare-stage" id="compare-stage" role="img" aria-label="Comparativo ilustrativo de textura e luminosidade da pele">
+          <div class="compare-half compare-left">
+            <img src="assets/pele-antes.webp" alt="Textura natural da pele" draggable="false" />
+            <span class="compare-label">TEXTURA NATURAL</span>
+          </div>
+          <div class="compare-half compare-right" id="compare-right">
+            <img src="assets/pele-depois.webp" alt="Pele hidratada e com luminosidade" draggable="false" />
+            <span class="compare-label">LUMINOSIDADE & VITALIDADE</span>
+          </div>
+          <div class="compare-divider" id="compare-divider"><div class="compare-handle">‹ &nbsp; ›</div></div>
+        </div>
+        <input id="compare-slider" class="compare-slider" type="range" min="5" max="95" value="50" aria-label="Mover a comparação ilustrativa" />
+        <div class="compare-footer">
+          <span>DESLIZE PARA INTERAGIR ↔</span>
+          <span>FOTOGRAFIA CLÍNICA ILUSTRATIVA • CUIDADO INDIVIDUALIZADO</span>
+        </div>
+      </div>
+    </section>
 
-    <section class="compare section-space" id="resultados"><div class="compare-copy reveal"><span class="section-index">06 / CLAREZA & RESPONSABILIDADE</span><h2>Resultados começam<br/>com <em>expectativas reais.</em></h2><p>Em dermatologia, cada pele responde de uma maneira. Conteúdos de antes e depois só devem ser apresentados com autorização, identificação adequada e contexto clínico.</p><a href="#contato" class="text-link dark">Converse sobre suas expectativas <svg><use href="#i-arrow"/></svg></a></div><div class="compare-widget reveal"><div class="compare-stage" id="compare-stage" role="img" aria-label="Comparação interativa abstrata e ilustrativa, sem imagens de pacientes"><div class="compare-half compare-left"><div class="abstract-skin skin-a"></div><span class="compare-label">CADA PELE</span></div><div class="compare-half compare-right" id="compare-right"><div class="abstract-skin skin-b"></div><span class="compare-label">É ÚNICA</span></div><div class="compare-divider" id="compare-divider"><div class="compare-handle">‹ &nbsp; ›</div></div></div><input id="compare-slider" class="compare-slider" type="range" min="5" max="95" value="50" aria-label="Mover a comparação ilustrativa" /><div class="compare-footer"><span>DESLIZE PARA INTERAGIR ↔</span><span>ILUSTRAÇÃO ABSTRATA • NÃO REPRESENTA RESULTADO CLÍNICO</span></div></div></section>
+    <section class="quiz section-space" id="plano">
+      <div class="quiz-orb" id="quiz-orb"></div>
+      <div class="quiz-left reveal">
+        <span class="section-index light">SUA PELE, SEU MOMENTO</span>
+        <h2>Vamos falar<br/>sobre <em>você?</em></h2>
+        <p>Em alguns passos, organize o que deseja conversar na consulta. Sem diagnósticos automáticos ou promessas: apenas um bom começo.</p>
+        <div class="quiz-step-counter"><span id="quiz-step-label">01</span><span class="quiz-divider-count">/</span><span>05</span></div>
+      </div>
+      <div class="quiz-card reveal">
+        <div class="quiz-card-top"><span>PRÉ-AVALIAÇÃO INFORMATIVA</span><span id="quiz-percent">20%</span></div>
+        <div class="quiz-progress"><span id="quiz-bar"></span></div>
+        <div id="quiz-content" aria-live="polite"></div>
+        <div class="quiz-actions"><button class="quiz-back" id="quiz-back" type="button" disabled>← Voltar</button><button class="btn btn-cream" id="quiz-next" type="button" disabled>Continuar <svg><use href="#i-arrow"/></svg></button></div>
+        <p class="quiz-privacy">Não salvamos suas respostas. Você escolhe se deseja enviá-las pelo WhatsApp.</p>
+      </div>
+    </section>
 
-    <section class="quiz section-space" id="plano"><div class="quiz-orb" id="quiz-orb"></div><div class="quiz-left reveal"><span class="section-index light">07 / SUA PELE, SEU MOMENTO</span><h2>Vamos falar<br/>sobre <em>você?</em></h2><p>Em alguns passos, organize o que deseja conversar na consulta. Sem diagnósticos automáticos ou promessas: apenas um bom começo.</p><div class="quiz-step-counter"><span id="quiz-step-label">01</span><span class="quiz-divider-count">/</span><span>05</span></div></div><div class="quiz-card reveal"><div class="quiz-card-top"><span>PRÉ-AVALIAÇÃO INFORMATIVA</span><span id="quiz-percent">20%</span></div><div class="quiz-progress"><span id="quiz-bar"></span></div><div id="quiz-content" aria-live="polite"></div><div class="quiz-actions"><button class="quiz-back" id="quiz-back" type="button" disabled>← Voltar</button><button class="btn btn-cream" id="quiz-next" type="button" disabled>Continuar <svg><use href="#i-arrow"/></svg></button></div><p class="quiz-privacy">Não salvamos suas respostas. Você escolhe se deseja enviá-las pelo WhatsApp.</p></div></section>
+    <section class="notes section-space">
+      <div class="section-top reveal"><span class="section-index">CONHECIMENTO É CUIDADO</span><span class="section-top-note">PEQUENOS HÁBITOS, GRANDE ATENÇÃO</span></div>
+      <h2 class="reveal">A pele fala. <em>A gente escuta.</em></h2>
+      <div class="note-grid">
+        <article class="note reveal">
+          <div class="note-art note-art-1"><span class="note-big">SPF</span><span class="note-mini">CUIDAR / PROTEGER</span></div>
+          <div class="note-body"><span>PROTEÇÃO</span><h3>O cuidado diário também é prevenção.</h3><p>Proteção solar e atenção às mudanças da pele fazem parte de uma rotina consciente.</p></div>
+        </article>
+        <article class="note reveal">
+          <div class="note-art note-art-2"><div class="note-flower">✳</div><span class="note-mini">PELE / INDIVIDUALIDADE</span></div>
+          <div class="note-body"><span>INDIVIDUALIDADE</span><h3>Nem toda pele precisa da mesma rotina.</h3><p>Textura, sensibilidade e fase de vida mudam o que funciona melhor para cada pessoa.</p></div>
+        </article>
+        <article class="note reveal">
+          <div class="note-art note-art-3"><span class="note-big note-infinity">∞</span><span class="note-mini">CIÊNCIA / LONGEVIDADE</span></div>
+          <div class="note-body"><span>LONGEVIDADE</span><h3>Naturalidade não tem idade.</h3><p>O objetivo do acompanhamento é cuidar da saúde e respeitar sua identidade.</p></div>
+        </article>
+      </div>
+    </section>
 
-    <section class="notes section-space"><div class="section-top reveal"><span class="section-index">08 / CONHECIMENTO É CUIDADO</span><span class="section-top-note">PEQUENOS HÁBITOS, GRANDE ATENÇÃO</span></div><h2 class="reveal">A pele fala. <em>A gente escuta.</em></h2><div class="note-grid"><article class="note reveal"><div class="note-art note-art-1"><span class="note-index">01</span><span class="note-big">SPF</span><span class="note-mini">CUIDAR / PROTEGER</span></div><div class="note-body"><span>PROTEÇÃO</span><h3>O cuidado diário também é prevenção.</h3><p>Proteção solar e atenção às mudanças da pele fazem parte de uma rotina consciente.</p></div></article><article class="note reveal"><div class="note-art note-art-2"><span class="note-index">02</span><div class="note-flower">✳</div><span class="note-mini">PELE / INDIVIDUALIDADE</span></div><div class="note-body"><span>INDIVIDUALIDADE</span><h3>Nem toda pele precisa da mesma rotina.</h3><p>Textura, sensibilidade e fase de vida mudam o que funciona melhor para cada pessoa.</p></div></article><article class="note reveal"><div class="note-art note-art-3"><span class="note-index">03</span><span class="note-big note-infinity">∞</span><span class="note-mini">CIÊNCIA / LONGEVIDADE</span></div><div class="note-body"><span>LONGEVIDADE</span><h3>Naturalidade não tem idade.</h3><p>O objetivo do acompanhamento é cuidar da saúde e respeitar sua identidade.</p></div></article></div></section>
+    <section class="faq section-space">
+      <div class="faq-left reveal"><span class="section-index">DÚVIDAS FREQUENTES</span><h2>Antes da consulta,<br/><em>tudo bem perguntar.</em></h2><p>Informação clara também faz parte do cuidado.</p><div class="faq-art">A<span>·</span>M</div></div>
+      <div class="faq-items reveal">
+        <details><summary>Como funciona a primeira avaliação? <span class="faq-plus"><svg><use href="#i-plus"/></svg></span></summary><p>A consulta inclui conversa sobre seu histórico, suas queixas e seus objetivos, além da avaliação dermatológica indicada. A conduta é definida pela médica durante o atendimento.</p></details>
+        <details><summary>Os tratamentos são personalizados? <span class="faq-plus"><svg><use href="#i-plus"/></svg></span></summary><p>Sim. A indicação considera a avaliação, as necessidades individuais, possíveis contraindicações e as expectativas de cada paciente.</p></details>
+        <details><summary>Preciso decidir um procedimento antes de ir? <span class="faq-plus"><svg><use href="#i-plus"/></svg></span></summary><p>Não. Você pode agendar uma consulta para esclarecer dúvidas e entender quais opções são ou não adequadas ao seu caso.</p></details>
+        <details><summary>Como saber quais cuidados combinam com minha pele? <span class="faq-plus"><svg><use href="#i-plus"/></svg></span></summary><p>A melhor forma é realizar avaliação dermatológica. O questionário deste site apenas organiza os assuntos que você deseja conversar, sem fazer diagnóstico.</p></details>
+        <details><summary>Onde fica o atendimento? <span class="faq-plus"><svg><use href="#i-plus"/></svg></span></summary><p>Avenida das Américas, 3500, Barra da Tijuca, Rio de Janeiro. Confirme o horário e os detalhes de acesso ao agendar.</p></details>
+      </div>
+    </section>
 
-    <section class="faq section-space"><div class="faq-left reveal"><span class="section-index">09 / DÚVIDAS FREQUENTES</span><h2>Antes da consulta,<br/><em>tudo bem perguntar.</em></h2><p>Informação clara também faz parte do cuidado.</p><div class="faq-art">A<span>·</span>M</div></div><div class="faq-items reveal"><details><summary>Como funciona a primeira avaliação? <span class="faq-plus"><svg><use href="#i-plus"/></svg></span></summary><p>A consulta inclui conversa sobre seu histórico, suas queixas e seus objetivos, além da avaliação dermatológica indicada. A conduta é definida pela médica durante o atendimento.</p></details><details><summary>Os tratamentos são personalizados? <span class="faq-plus"><svg><use href="#i-plus"/></svg></span></summary><p>Sim. A indicação considera a avaliação, as necessidades individuais, possíveis contraindicações e as expectativas de cada paciente.</p></details><details><summary>Preciso decidir um procedimento antes de ir? <span class="faq-plus"><svg><use href="#i-plus"/></svg></span></summary><p>Não. Você pode agendar uma consulta para esclarecer dúvidas e entender quais opções são ou não adequadas ao seu caso.</p></details><details><summary>Como saber quais cuidados combinam com minha pele? <span class="faq-plus"><svg><use href="#i-plus"/></svg></span></summary><p>A melhor forma é realizar avaliação dermatológica. O questionário deste site apenas organiza os assuntos que você deseja conversar, sem fazer diagnóstico.</p></details><details><summary>Onde fica o atendimento? <span class="faq-plus"><svg><use href="#i-plus"/></svg></span></summary><p>Avenida das Américas, 3500, Barra da Tijuca, Rio de Janeiro. Confirme o horário e os detalhes de acesso ao agendar.</p></details></div></section>
-
-    <section class="contact section-space" id="contato"><div class="contact-decor">✳</div><div class="contact-copy reveal"><span class="section-index light">10 / O PRÓXIMO PASSO</span><h2>Seu cuidado<br/>começa <em>aqui.</em></h2><p>Conte um pouco sobre o que procura. Vamos preparar uma mensagem para a equipe pelo WhatsApp.</p><div class="contact-detail"><svg><use href="#i-pin"/></svg><span>Av. das Américas, 3500<br/>Barra da Tijuca, Rio de Janeiro — RJ</span></div><a href="https://www.google.com/maps/search/?api=1&amp;query=Avenida+das+Americas+3500+Barra+da+Tijuca+Rio+de+Janeiro" target="_blank" rel="noopener" class="contact-map-link">Ver no Google Maps ↗</a></div><div class="contact-form-box reveal"><div class="form-head"><span>ENTRE EM CONTATO</span><span>↗</span></div><form id="contact-form"><label for="contact-name">Como podemos chamar você?</label><input id="contact-name" type="text" name="name" placeholder="Seu nome" required maxlength="90" autocomplete="name" /><label for="contact-interest">O que gostaria de conversar?</label><select id="contact-interest" name="interest" required><option value="" disabled selected>Selecione um assunto</option><option>Consulta dermatológica</option><option>Cuidados estéticos faciais</option><option>Prevenção e avaliação de sinais</option><option>Rotina de cuidados com a pele</option><option>Outra questão</option></select><label for="contact-message">Quer compartilhar mais algum detalhe? <small>(opcional)</small></label><textarea id="contact-message" name="message" rows="3" maxlength="500" placeholder="Escreva aqui... Evite enviar dados médicos sensíveis."></textarea><button class="btn btn-dark contact-submit" type="submit">Conversar pelo WhatsApp <svg><use href="#i-diag"/></svg></button><p>Ao continuar, você será direcionado ao WhatsApp. Nenhum dado deste formulário é armazenado no site.</p></form></div></section>
+    <section class="contact section-space" id="contato">
+      <div class="contact-decor">✳</div>
+      <div class="contact-copy reveal">
+        <span class="section-index light">O PRÓXIMO PASSO</span>
+        <h2>Seu cuidado<br/>começa <em>aqui.</em></h2>
+        <p>Conte um pouco sobre o que procura. Vamos preparar uma mensagem para a equipe pelo WhatsApp.</p>
+        <div class="contact-detail"><svg><use href="#i-pin"/></svg><span>Av. das Américas, 3500<br/>Barra da Tijuca, Rio de Janeiro — RJ</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Avenida+das+Americas+3500+Barra+da+Tijuca+Rio+de+Janeiro" target="_blank" rel="noopener" class="contact-map-link">Ver no Google Maps ↗</a>
+      </div>
+      <div class="contact-form-box reveal">
+        <div class="form-head"><span>ENTRE EM CONTATO</span><span>↗</span></div>
+        <form id="contact-form">
+          <label for="contact-name">Como podemos chamar você?</label>
+          <input id="contact-name" type="text" name="name" placeholder="Seu nome" required maxlength="90" autocomplete="name" />
+          <label for="contact-interest">O que gostaria de conversar?</label>
+          <select id="contact-interest" name="interest" required>
+            <option value="" disabled selected>Selecione um assunto</option>
+            <option>Consulta dermatológica</option>
+            <option>Cuidados estéticos faciais</option>
+            <option>Prevenção e avaliação de sinais</option>
+            <option>Rotina de cuidados com a pele</option>
+            <option>Outra questão</option>
+          </select>
+          <label for="contact-message">Quer compartilhar mais algum detalhe? <small>(opcional)</small></label>
+          <textarea id="contact-message" name="message" rows="3" maxlength="500" placeholder="Escreva aqui... Evite enviar dados médicos sensíveis."></textarea>
+          <button class="btn btn-dark contact-submit" type="submit">Conversar pelo WhatsApp <svg><use href="#i-diag"/></svg></button>
+          <p>Ao continuar, você será direcionado ao WhatsApp. Nenhum dado deste formulário é armazenado no site.</p>
+        </form>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer"><div class="footer-top"><a class="brand footer-brand" href="#inicio"><span class="brand-mark">a<span>·</span>m</span><span class="brand-name">Ana Lúcia Motta<small>DERMATOLOGIA</small></span></a><div class="footer-slogan">Sua pele. Sua história.<br/><em>Seu cuidado.</em></div><div class="footer-links"><a href="#tratamentos">Tratamentos</a><a href="#sobre">A doutora</a><a href="#contato">Agendamento</a><a href="https://www.instagram.com/draanaluciamotta/" target="_blank" rel="noopener">Instagram ↗</a></div></div><div class="footer-bottom"><span>© <span id="year">2026</span> ANA LÚCIA MOTTA · CRM-RJ 5291852-0 · RQE 28041</span><span>RIO DE JANEIRO · BARRA DA TIJUCA</span><button id="privacy-open" type="button">Privacidade e informações legais ↗</button><a href="https://branapi.com" target="_blank" rel="noopener noreferrer" class="footer-credit" aria-label="Desenvolvido por Branapi">Desenvolvido por <strong>BRANAPI</strong></a></div></footer>
+  <footer class="site-footer">
+    <div class="footer-top">
+      <a class="brand footer-brand" href="#inicio"><span class="brand-mark">a<span>·</span>m</span><span class="brand-name">Ana Lúcia Motta<small>DERMATOLOGIA</small></span></a>
+      <div class="footer-slogan">Sua pele. Sua história.<br/><em>Seu cuidado.</em></div>
+      <div class="footer-links"><a href="#tratamentos">Tratamentos</a><a href="#sobre">A doutora</a><a href="#contato">Agendamento</a><a href="https://www.instagram.com/draanaluciamotta/" target="_blank" rel="noopener">Instagram ↗</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> ANA LÚCIA MOTTA · CRM-RJ 5291852-0 · RQE 28041</span>
+      <span>RIO DE JANEIRO · BARRA DA TIJUCA</span>
+      <button id="privacy-open" type="button">Privacidade e informações legais ↗</button>
+      <a href="https://branapi.com" target="_blank" rel="noopener noreferrer" class="footer-credit" aria-label="Desenvolvido por Branapi">Desenvolvido por <strong>BRANAPI</strong></a>
+    </div>
+  </footer>
   <a class="whatsapp-float" id="wa-float" href="https://wa.me/552196657080?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp"><svg><use href="#i-whatsapp"/></svg><span>Agendar consulta</span></a>
   <div class="modal-backdrop" id="modal-backdrop" hidden><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" id="modal-close" aria-label="Fechar" type="button">×</button><span class="section-index" id="modal-eyebrow">DERMATOLOGIA</span><h2 id="modal-title">Informações</h2><div class="modal-body" id="modal-body"></div><a id="modal-cta" class="btn btn-dark" href="#contato">Agendar avaliação <svg><use href="#i-diag"/></svg></a></div></div>
   <script src="app.js" defer></script>

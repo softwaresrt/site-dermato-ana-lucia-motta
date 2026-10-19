@@ -409,7 +409,7 @@ function renderQuiz() {
     quizContent.innerHTML = `<span class="section-index">SEU RESUMO</span><h3 class="quiz-question">Um bom começo para<br/><em>sua consulta.</em></h3><p class="quiz-result">Esses são os temas que você escolheu para conversar:</p><div class="quiz-result"><ul>${answers.map((a, i) => `<li>${escapeHtml(quizSteps[i].options[a])}</li>`).join('')}</ul><strong>Importante:</strong> Isto não é diagnóstico nem prescrição. A avaliação e as indicações são definidas exclusivamente pela dermatologista.</div>`;
     quizNext.disabled = false;
     quizNext.innerHTML = 'Enviar resumo pelo WhatsApp <svg><use href="#i-diag"/></svg>';
-    quizBack.textContent = '← Rever escolhas';
+    quizBack.innerHTML = '<svg class="inline-back" aria-hidden="true"><use href="#i-arrow-left"/></svg> <span>Rever escolhas</span>';
     return;
   }
   const step = quizSteps[quizStep];
@@ -421,7 +421,7 @@ function renderQuiz() {
   }));
   quizNext.disabled = answers[quizStep] === null;
   quizNext.innerHTML = `${quizStep === 4 ? 'Ver meu resumo' : 'Continuar'} <svg><use href="#i-arrow"/></svg>`;
-  quizBack.textContent = '← Voltar';
+  quizBack.innerHTML = '<svg class="inline-back" aria-hidden="true"><use href="#i-arrow-left"/></svg> <span>Voltar</span>';
 }
 
 function escapeHtml(x) {

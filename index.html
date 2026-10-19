@@ -48,6 +48,10 @@
     <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.7 7.4L3.5 20l1.2-4.2A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="M8.4 8.2c.4-.4.7-.1.9.3l.8 1.6c.2.4-.1.8-.5 1.1.7 1.5 1.8 2.5 3.2 3.1.4-.4.8-.6 1.2-.4l1.5.8c.6.3.7.7.3 1.1-.6.8-1.4 1-2.4.7-2.8-.8-5.3-3.1-6.1-5.8-.3-.9.1-1.9 1.1-2.5Z"/></symbol>
     <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5.2 3 8.6 8 11 5-2.4 8-5.8 8-11V5l-8-3Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
     <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3M4 4l2 2m12 12 2 2M20 4l-2 2M6 18l-2 2"/></symbol>
+    <symbol id="i-asterisk" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93 4.93 19.07"/></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M20 12H5m6-6-6 6 6 6"/></symbol>
+    <symbol id="i-drag-h" viewBox="0 0 24 24"><path d="m8 8-4 4 4 4m8-8 4 4-4 4M4 12h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
   </svg>
 
   <div class="loader" id="loader" aria-hidden="true">
@@ -66,7 +70,7 @@
     <a class="header-cta" data-wa="Olá! Gostaria de agendar uma avaliação dermatológica." href="https://wa.me/552196657080" target="_blank" rel="noopener">Agendar avaliação <svg><use href="#i-diag"/></svg></a>
     <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
   </header>
-  <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile"><a href="#filosofia">Filosofia</a><a href="#tratamentos">Tratamentos</a><a href="#sobre">A doutora</a><a href="#contato">Agendar avaliação ↗</a></nav>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile"><a href="#filosofia">Filosofia</a><a href="#tratamentos">Tratamentos</a><a href="#sobre">A doutora</a><a href="#contato">Agendar avaliação <svg class="menu-diag" aria-hidden="true"><use href="#i-diag"/></svg></a></nav>
 
   <main>
     <section class="hero" id="inicio" aria-labelledby="hero-title">
@@ -76,13 +80,13 @@
         <div class="eyebrow hero-eyebrow"><span class="eyebrow-line"></span> DERMATOLOGIA CLÍNICA & ESTÉTICA <span class="eyebrow-dot"></span> RIO DE JANEIRO</div>
         <h1 id="hero-title">A ciência da<br/><em>beleza,</em> com<br/>o seu <span class="hero-last">ritmo<span class="period">.</span></span></h1>
         <p class="hero-description">Sua pele é única. O cuidado também deve ser. Dermatologia com conhecimento, escuta e naturalidade, em cada etapa da sua história.</p>
-        <div class="hero-actions"><a href="#tratamentos" class="btn btn-dark">Explore os cuidados <svg><use href="#i-arrow"/></svg></a><a href="#sobre" class="text-link">Conheça a Dra. Ana Lúcia <span>↗</span></a></div>
+        <div class="hero-actions"><a href="#tratamentos" class="btn btn-dark">Explore os cuidados <svg><use href="#i-arrow"/></svg></a><a href="#sobre" class="text-link">Conheça a Dra. Ana Lúcia <svg aria-hidden="true"><use href="#i-diag"/></svg></a></div>
         <div class="hero-bottom"><div class="hero-line"></div><span>CONHECER É O PRIMEIRO PASSO PARA CUIDAR.</span></div>
       </div>
       <div class="hero-media" id="hero-media">
         <div class="hero-photo"><img id="hero-photo-img" src="assets/ana-retrato.webp" alt="Retrato profissional da Dra. Ana Lúcia Motta" fetchpriority="high" /></div>
         <div class="hero-arc arc-one"></div><div class="hero-arc arc-two"></div>
-        <div class="orbit-note"><span class="orbit-spark">✳</span><span>CIÊNCIA<br/><i>&</i> SENSIBILIDADE</span></div>
+        <div class="orbit-note"><span class="orbit-spark" aria-hidden="true"><svg><use href="#i-asterisk"/></svg></span><span>CIÊNCIA<br/><i>&</i> SENSIBILIDADE</span></div>
         <div class="hero-image-caption"><span>DRª ANA LÚCIA MOTTA</span><span>UFRJ / SBD</span></div>
         <div class="floating-seal"><span>BELEZA<br/>É SENTIR-SE<br/><em>você.</em></span></div>
       </div>
@@ -90,9 +94,9 @@
     </section>
 
     <section class="intro section-space" id="filosofia">
-      <div class="intro-kicker reveal"><span class="section-index">NOSSO OLHAR</span><span class="asterisk">✳</span></div>
+      <div class="intro-kicker reveal"><span class="section-index">NOSSO OLHAR</span><span class="asterisk" aria-hidden="true"><svg><use href="#i-asterisk"/></svg></span></div>
       <div class="intro-main reveal"><span class="intro-quote">“</span><h2>O cuidado começa<br/>quando a gente <em>olha</em><br/>além da pele.</h2></div>
-      <div class="intro-footer reveal"><p>Mais do que protocolos, pessoas. Uma abordagem que considera sua história, suas particularidades e o que realmente faz sentido para você.</p><div class="intro-signature">Ciência. Naturalidade. Acolhimento. <span>✺</span></div></div>
+      <div class="intro-footer reveal"><p>Mais do que protocolos, pessoas. Uma abordagem que considera sua história, suas particularidades e o que realmente faz sentido para você.</p><div class="intro-signature">Ciência. Naturalidade. Acolhimento. <span class="signature-spark" aria-hidden="true"><svg><use href="#i-asterisk"/></svg></span></div></div>
     </section>
 
     <section class="treatments section-space" id="tratamentos">
@@ -108,7 +112,7 @@
       <div class="treatment-footnote">* A definição de tratamentos, procedimentos e frequência é feita exclusivamente em avaliação médica.</div>
     </section>
 
-    <section class="statement" aria-label="Nossa visão"><div class="statement-text" aria-hidden="true"><span>BELEZA COM</span><em>identidade.</em><span>CIÊNCIA COM</span><em>sensibilidade.</em></div><div class="statement-center"><span>✳</span> O EXTRAORDINÁRIO ESTÁ EM SER VOCÊ.</div></section>
+    <section class="statement" aria-label="Nossa visão"><div class="statement-watermark" aria-hidden="true"><svg><use href="#i-asterisk"/></svg></div><div class="statement-text" aria-hidden="true"><span>BELEZA COM</span><em>identidade.</em><span>CIÊNCIA COM</span><em>sensibilidade.</em></div><div class="statement-center"><svg class="statement-spark" aria-hidden="true"><use href="#i-asterisk"/></svg> O EXTRAORDINÁRIO ESTÁ EM SER VOCÊ.</div></section>
 
     <section class="about section-space" id="sobre"><div class="about-image reveal"><img src="assets/ana-consultorio.webp" loading="lazy" alt="Dra. Ana Lúcia Motta em seu consultório, sentada à mesa" /><span class="about-image-tag">PROXIMIDADE QUE TRANSFORMA O CUIDADO</span></div><div class="about-copy reveal"><span class="section-index">QUEM CUIDA DE VOCÊ</span><h2>Muito prazer,<br/>sou <em>Ana Lúcia.</em></h2><p class="about-lead">Acredito em uma dermatologia que une conhecimento técnico e um olhar verdadeiramente individual.</p><p>Dermatologista formada pela Universidade Federal do Rio de Janeiro (UFRJ), com especialização reconhecida pela Sociedade Brasileira de Dermatologia (SBD). Minha atuação contempla dermatologia clínica, cosmética, tratamentos faciais e detecção precoce do câncer de pele.</p><div class="credentials"><div><span>FORMAÇÃO</span><strong>Universidade Federal<br/>do Rio de Janeiro</strong></div><div><span>ESPECIALIDADE</span><strong>Dermatologia<br/>Sociedade Brasileira de Dermatologia</strong></div><div><span>REGISTROS INFORMADOS</span><strong>CRM-RJ 5291852-0<br/>RQE 28041</strong></div></div><a class="text-link dark" href="https://www.instagram.com/draanaluciamotta/" target="_blank" rel="noopener">Acompanhe meu dia a dia <svg><use href="#i-diag"/></svg></a></div></section>
 
@@ -133,7 +137,7 @@
         </div>
         <input id="compare-slider" class="compare-slider" type="range" min="5" max="95" value="50" aria-label="Mover a comparação ilustrativa" />
         <div class="compare-footer">
-          <span>DESLIZE PARA INTERAGIR ↔</span>
+          <span class="compare-drag-hint">DESLIZE PARA INTERAGIR <svg class="inline-drag" aria-hidden="true"><use href="#i-drag-h"/></svg></span>
           <span>FOTOGRAFIA CLÍNICA ILUSTRATIVA • CUIDADO INDIVIDUALIZADO</span>
         </div>
       </div>
@@ -151,7 +155,7 @@
         <div class="quiz-card-top"><span>PRÉ-AVALIAÇÃO INFORMATIVA</span><span id="quiz-percent">20%</span></div>
         <div class="quiz-progress"><span id="quiz-bar"></span></div>
         <div id="quiz-content" aria-live="polite"></div>
-        <div class="quiz-actions"><button class="quiz-back" id="quiz-back" type="button" disabled>← Voltar</button><button class="btn btn-cream" id="quiz-next" type="button" disabled>Continuar <svg><use href="#i-arrow"/></svg></button></div>
+        <div class="quiz-actions"><button class="quiz-back" id="quiz-back" type="button" disabled><svg class="inline-back" aria-hidden="true"><use href="#i-arrow-left"/></svg><span>Voltar</span></button><button class="btn btn-cream" id="quiz-next" type="button" disabled>Continuar <svg><use href="#i-arrow"/></svg></button></div>
         <p class="quiz-privacy">Não salvamos suas respostas. Você escolhe se deseja enviá-las pelo WhatsApp.</p>
       </div>
     </section>
@@ -165,7 +169,7 @@
           <div class="note-body"><span>PROTEÇÃO</span><h3>O cuidado diário também é prevenção.</h3><p>Proteção solar e atenção às mudanças da pele fazem parte de uma rotina consciente.</p></div>
         </article>
         <article class="note reveal">
-          <div class="note-art note-art-2"><div class="note-flower">✳</div><span class="note-mini">PELE / INDIVIDUALIDADE</span></div>
+          <div class="note-art note-art-2"><div class="note-flower" aria-hidden="true"><svg><use href="#i-asterisk"/></svg></div><span class="note-mini">PELE / INDIVIDUALIDADE</span></div>
           <div class="note-body"><span>INDIVIDUALIDADE</span><h3>Nem toda pele precisa da mesma rotina.</h3><p>Textura, sensibilidade e fase de vida mudam o que funciona melhor para cada pessoa.</p></div>
         </article>
         <article class="note reveal">
@@ -187,16 +191,16 @@
     </section>
 
     <section class="contact section-space" id="contato">
-      <div class="contact-decor">✳</div>
+      <div class="contact-decor" aria-hidden="true"><svg><use href="#i-asterisk"/></svg></div>
       <div class="contact-copy reveal">
         <span class="section-index light">O PRÓXIMO PASSO</span>
         <h2>Seu cuidado<br/>começa <em>aqui.</em></h2>
         <p>Conte um pouco sobre o que procura. Vamos preparar uma mensagem para a equipe pelo WhatsApp.</p>
         <div class="contact-detail"><svg><use href="#i-pin"/></svg><span>Av. das Américas, 3500<br/>Barra da Tijuca, Rio de Janeiro — RJ</span></div>
-        <a href="https://www.google.com/maps/search/?api=1&amp;query=Avenida+das+Americas+3500+Barra+da+Tijuca+Rio+de+Janeiro" target="_blank" rel="noopener" class="contact-map-link">Ver no Google Maps ↗</a>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Avenida+das+Americas+3500+Barra+da+Tijuca+Rio+de+Janeiro" target="_blank" rel="noopener" class="contact-map-link">Ver no Google Maps <svg class="inline-diag" aria-hidden="true"><use href="#i-diag"/></svg></a>
       </div>
       <div class="contact-form-box reveal">
-        <div class="form-head"><span>ENTRE EM CONTATO</span><span>↗</span></div>
+        <div class="form-head"><span>ENTRE EM CONTATO</span><svg class="form-head-diag" aria-hidden="true"><use href="#i-diag"/></svg></div>
         <form id="contact-form">
           <label for="contact-name">Como podemos chamar você?</label>
           <input id="contact-name" type="text" name="name" placeholder="Seu nome" required maxlength="90" autocomplete="name" />
@@ -222,17 +226,17 @@
     <div class="footer-top">
       <a class="brand footer-brand" href="#inicio"><span class="brand-mark">a<span>·</span>m</span><span class="brand-name">Ana Lúcia Motta<small>DERMATOLOGIA</small></span></a>
       <div class="footer-slogan">Sua pele. Sua história.<br/><em>Seu cuidado.</em></div>
-      <div class="footer-links"><a href="#tratamentos">Tratamentos</a><a href="#sobre">A doutora</a><a href="#contato">Agendamento</a><a href="https://www.instagram.com/draanaluciamotta/" target="_blank" rel="noopener">Instagram ↗</a></div>
+      <div class="footer-links"><a href="#tratamentos">Tratamentos</a><a href="#sobre">A doutora</a><a href="#contato">Agendamento</a><a href="https://www.instagram.com/draanaluciamotta/" target="_blank" rel="noopener" class="footer-ext-link">Instagram <svg class="inline-diag" aria-hidden="true"><use href="#i-diag"/></svg></a></div>
     </div>
     <div class="footer-bottom">
       <span>© <span id="year">2026</span> ANA LÚCIA MOTTA · CRM-RJ 5291852-0 · RQE 28041</span>
       <span>RIO DE JANEIRO · BARRA DA TIJUCA</span>
-      <button id="privacy-open" type="button">Privacidade e informações legais ↗</button>
+      <button id="privacy-open" type="button" class="privacy-btn">Privacidade e informações legais <svg class="inline-diag" aria-hidden="true"><use href="#i-diag"/></svg></button>
       <a href="https://branapi.com" target="_blank" rel="noopener noreferrer" class="footer-credit" aria-label="Desenvolvido por Branapi">Desenvolvido por <strong>BRANAPI</strong></a>
     </div>
   </footer>
   <a class="whatsapp-float" id="wa-float" href="https://wa.me/552196657080?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp"><svg><use href="#i-whatsapp"/></svg><span>Agendar consulta</span></a>
-  <div class="modal-backdrop" id="modal-backdrop" hidden><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" id="modal-close" aria-label="Fechar" type="button">×</button><span class="section-index" id="modal-eyebrow">DERMATOLOGIA</span><h2 id="modal-title">Informações</h2><div class="modal-body" id="modal-body"></div><a id="modal-cta" class="btn btn-dark" href="#contato">Agendar avaliação <svg><use href="#i-diag"/></svg></a></div></div>
+  <div class="modal-backdrop" id="modal-backdrop" hidden><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" id="modal-close" aria-label="Fechar" type="button"><svg aria-hidden="true"><use href="#i-close"/></svg></button><span class="section-index" id="modal-eyebrow">DERMATOLOGIA</span><h2 id="modal-title">Informações</h2><div class="modal-body" id="modal-body"></div><a id="modal-cta" class="btn btn-dark" href="#contato">Agendar avaliação <svg><use href="#i-diag"/></svg></a></div></div>
   <script src="app.js" defer></script>
 </body>
 </html>
